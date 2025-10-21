@@ -189,7 +189,7 @@ nav.nav-menu ul li a:hover {
     padding: 10px;
 }
 
-.pack-item-active {
+.pack-item.activo {
     display: flex;
     opacity: 1;               /* visible cuando está activo */
     position: relative;      /* para que ocupe su espacio */
