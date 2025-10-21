@@ -156,7 +156,8 @@ nav.nav-menu ul li a:hover {
 }
 .button-left, .button-right {
     background-color: #f1cc7e;
-    color: white;
+    border-radius: 4px;
+    color: rgb(69, 43, 3);
     border: none;
     font-size: 2rem;
     padding: 10px;
@@ -175,6 +176,9 @@ nav.nav-menu ul li a:hover {
 
 .button-right {
     margin-left: 10px;
+}
+.button-right:hover, .button-left:hover{
+  filter: brightness(0.97);
 }
 
 .pack-item {
@@ -232,6 +236,9 @@ nav.nav-menu ul li a:hover {
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
+}
+.btn-comprar:hover {
+  filter: brightness(0.97);
 }
 
 
