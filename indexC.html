@@ -48,7 +48,7 @@
             <h2 id="titulo-pack"></h2>
             <p id="descripcion-corta"></p>
             <p class="precio">Precio: <strong id="precio-pack"></strong></p>
-            <div class="descripcion-larga">
+            <div class="descripcion-larga-texto">
                 <h3>Descripción detallada</h3>
                 <p id="descripcion-larga-texto"></p>
             </div>
@@ -183,10 +183,10 @@
 
         // Rellenamos los elementos del HTML
         document.getElementById("titulo-pack").textContent = pack.titulo;
-        document.getElementById("decsripcion-corta").textContent = pack.descripcionCorta;
+        document.getElementById("descripcion-corta").textContent = pack.descripcionCorta;
         document.getElementById("precio-pack").textContent = pack.precio;
         document.getElementById("imagen-pack").src = pack.imagen;
-        docuemnt.getElementById("descripcion-larga-texto").textContent = pack.descripcionLarga;
+        document.getElementById("descripcion-larga-texto").textContent = pack.descripcionLarga;
     </script>
 
 
