@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mochileando por España</title>
+    <link rel="stylesheet" href="../style/style.css"> <!-- Enlace al archivo externo CSS-->
+    <script src="js/script.js" defer></script> <!--Enlace al script principal de JavaScript-->
+    <link href="https://fonts.googleapis.com/css2?family=Sugo+Display:wght@400;700&display=swap" rel="stylesheet"> <!--Enlace al tipo de fuente para el título-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <header>
+        <!--Sección izquierda: nombre del sito-->        
+        <div class="nombre-section">
+            <h1>MOCHILEANDO POR ESPAÑA</h1>
+
+        </div>
+
+        <!-- Sección centro: Menú de navegación-->
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#experiencias">Experiencias</a></li>
+                <li><a href="#consejos">Consejos</a></li>
+                <li><a href="#foro">Foro</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <!-- Sección derecha: Logo + selección de idioma-->
+        <div class="language-logo-section">
+            <img src="../images/Logo.png" alt="Logo de Mochileando por España" class="logo">
+            <!--Combo para la slección de idioma-->
+            <select name="language" id="language-select">
+                <option value="es">ES</option>
+                <option value="en">EN</option>
+                <option value="fr">FR</option>
+                <option value="de">DE</option>
+        </select>
+        </div>
+    </header>
+
+
+<!--CUERPO-->
+    <main class="cuerpo layout">
+    <!--Contenedor izquierdo -->
+        <section class="left-container" aria-label="Contenido principal">
+            
+            <!--Banner-->
+            <div class="banner">
+                <div class="banner-text">
+                    <h2>El mundo te espera, empieza por España</h2>
+                </div>
+            </div>
+            
+            <!--Carrusel de packs-->
+            <div class="carrusel">
+                <h2>Packs de viajes recomendados</h2>
+                <div class="carrusel-items">
+                    <!--Flecha izquierda-->
+                    <button class="button-left">&#10094;</button>
+
+                    <!--Items del carrusel-->
+                    <div class="carrusel-packs">
+                        <!--Pack 1-->
+                        <div class="pack-item-active" data-pack="1">
+                            <img src="../images/pack1-montaña.png" alt="Pack aventura montaña">
+                            <h3>Aventura asturiana</h3>
+                            <p>5 días explorando los Picos de Europa y sus paisajes de ensueño</p>
+                            <p class="precio">390€</p>
+                            <a href="indexC/compra-aventura-asturiana.html" class="purchase-button">Comprar</a>
+                        </div>
+                        <!--Pack 2-->
+                        <div class="pack-item" data-pack="2">
+                            <img src="../images/pack2-desierto.png" alt="Pack aventura desierto">
+                            <h4>El desafío del Teide</h4>
+                            <p>7 días viviendo entre volcanes y playas que te dejarán boquiabierto</p>
+                            <p class="precio">575€</p>
+                            <a href="indexC/compra-desafio-teide.html" class="purchase-button">Comprar</a>
+                        </div>
+                        <!--Pack 3-->
+                        <div class="pack-item" data-pack="3">
+                            <img src="../images/pack3-camino.png" alt="Pack aventura camino">
+                            <h4>Hacia Santiago</h4>
+                            <p>10 días, casi 300 kms y una meta, ¡Santiago!</p>
+                            <p class="precio">450€</p>
+                            <a href="indexC/compra-camino.html" class="purchase-button">Comprar</a>
+                        </div>
+                        <!--Pack4-->
+                        <div class="pack-item" data-pack="4">
+                            <img src="../images/pack4-caravana.png" alt="Pack aventura caravana">
+                            <h5>País Vasco en Caravana</h5>
+                            <p>Recorre Euskadi y sus pueblos en autocaravana durante 8 días</p>
+                            <p class="precio">400€</p>
+                          <a href="indexC/compra-caravana.html" class="purchase-button">Comprar</a>
+                        </div>
+                        <!--Pack 5-->
+                        <div class="pack-item" data-pack="5">
+                            <img src="../images/pack5-islas.png" alt="Pack aventura islas">
+                            <h6>Senderismo por Mallorca</h6>
+                            <p>5 días de las rutas de senderismo más espectaculares de Mallorca</p>
+                            <p class="precio">480€</p>
+                            <a href="indexC/compra-mallorca.html" class="purchase-button">Comprar</a>
+                        </div>
+                    </div>
+
+                    <!--Flecha derecha-->
+                    <button class="button-right">&#10095;</button> 
+                </div>            
+            </div>
+            <div class="comunidad-experiencias">
+              <h2 class="exp">Experiencias de la comunidad mochilera</h2>
+              <div class="experiencias-grid">
+                <div class="experiencia-caja">
+                  <img src="../images/katmandu.png" alt="Hostal en Katmandú">
+                  <h3>Hostal en Katmandú</h3>
+                  <div class="botones-experiencia">
+                    <button>Ver más</button>
+                    <button class="btn-corazon" aria-label="Me gusta">&#10084;</button>
+                  </div>
+                </div>
+                <div class="experiencia-caja">
+                  <img src="../images/sudamerica.png" alt="Sudamérica en bus">
+                  <h3>Sudamérica en bus</h3>
+                  <div class="botones-experiencia">
+                    <button>Ver más</button>
+                    <button class="btn-corazon" aria-label="Me gusta">&#10084;</button>
+                  </div>
+                </div>
+                <div class="experiencia-caja">
+                  <img src="../images/india.png" alt="Visado para India">
+                  <h3>Visado para India</h3>
+                  <div class="botones-experiencia">
+                    <button>Ver más</button>
+                    <button class="btn-corazon" aria-label="Me gusta">&#10084;</button>
+                  </div>
+                </div>
+                <div class="experiencia-caja">
+                  <img src="../images/tailandia.png" alt="Ruta por Tailandia">
+                  <h3>Ruta por Tailandia</h3>
+                  <div class="botones-experiencia">
+                    <button>Ver más</button>
+                    <button class="btn-corazon" aria-label="Me gusta">&#10084;</button>
+                  </div>
+                </div>
+                <div class="experiencia-caja">
+                  <img src="../images/peru.png" alt="Trekking en Perú">
+                  <h3>Trekking en Perú</h3>
+                  <div class="botones-experiencia">
+                    <button>Ver más</button>
+                    <button class="btn-corazon" aria-label="Me gusta">&#10084;</button>
+                  </div>
+                </div>
+                <div class="experiencia-caja">
+                  <img src="../images/safari.png" alt="Safari en Tanzania">
+                  <h3>Safari en Tanzania</h3>
+                  <div class="botones-experiencia">
+                    <button>Ver más</button>
+                    <button class="btn-corazon" aria-label="Me gusta">&#10084;</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </section>
+
+    <!--Barra lateral derecha -->
+        <aside class="barra-lateral" aria-label="Barra lateral Home">
+              
+            <!-- Inicio de sesión -->
+          <section>
+            <h2>Inicia sesión</h2>
+            <form action="sesion.html" method="get" class="form-login">
+              <div class="campo">
+                <label for="login-email">Correo</label>
+                <input type="email" id="login-email" name="email" placeholder="nombre@dominio.com" required>
+              </div>
+              <div class="campo">
+                <label for="login-pass">Contraseña</label>
+                <input type="password" id="login-pass" name="password" placeholder="********" required minlength="6">
+              </div>
+              <button type="submit" class="btn-primario">Iniciar sesión</button>
+              <a class="btn-secundario" href="indexA.html">Registro</a>
+            </form>
+          </section>
+
+          <!-- Top destinos -->
+          <section>
+            <h2>Top destinos</h2>
+            <ul>
+              <li>Picos de Europa <span class="item-badge">4.8★</span></li>
+              <li>Islas Canarias <span class="item-badge">4.7★</span></li>
+              <li>Camino de Santiago <span class="item-badge">4.6★</span></li>
+              <li>Pirineos <span class="item-badge">4.6★</span></li>
+            </ul>
+          </section>
+
+          <!-- Consejos rápidos -->
+          <section>
+            <h2>Consejos rápidos</h2>
+            <ul class="lista-consejos">
+              <li>Lleva capas ligeras para cambios de clima en montaña.</li>
+              <li>Hidrátate y usa protector solar incluso en días nublados.</li>
+              <li>Revisa el nivel de dificultad antes de reservar.</li>
+            </ul>
+            <form class="form-consejo" action="#" method="post">
+              <label for="nuevo-consejo" class="sr-only">Añadir consejo</label>
+              <input type="text" id="nuevo-consejo" name="nuevo-consejo" placeholder="Escribe un consejo...">
+              <textarea class="nuevo-consejo" name="consejo" rows="2" placeholder="Comparte un consejo..." required></textarea>
+              <button type="submit" class="btn-primario btn-bloque">Publicar</button>
+            </form>
+          </section>
+
+          <!-- Próximos encuentros -->
+          <section>
+            <h2>Próximos encuentros</h2>
+            <ul>
+              <li>
+                <div>5 Oct<br>Ruta Lagos de Covadonga<br><span style="font-size:0.95em;color:#8a7e54;">Nivel medio · 12 km</span></div>
+                <a href="registro.html" class="btn-mini">Apuntarse</a>
+              </li>
+              <li>
+                <div>19 Oct<br>Senderismo Anaga<br><span style="font-size:0.95em;color:#8a7e54;">Nivel fácil · 8 km</span></div>
+                <a href="registro.html" class="btn-mini">Apuntarse</a>
+              </li>
+              <li>
+                <div>2 Nov<br>Etapa Camino Inglés<br><span style="font-size:0.95em;color:#8a7e54;">Nivel medio · 18 km</span></div>
+                <a href="registro.html" class="btn-mini">Apuntarse</a>
+              </li>
+            </ul>
+          </section>
+        </aside>
+
+    </main>
+
+    <!--PIE DE PÁGINA-->
+      <div class="footer-content">
+
+        <form class="footer-newsletter" action="#" method="post">
+          <input type="email" placeholder="Tu email" required>
+          <button type="submit">Suscribirse</button>
+        </form>
+
+        <nav class="footer-links">
+          <a href="#">Sobre nosotros</a>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Ayuda</a>
+        </nav>
+
+        <div class="footer-social">
+          <a href="#"><img src="instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="tiktok.png" alt="TikTok"></a>
+          <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 Mochileando por España. Todos los derechos reservados.</p>
+        </div>
+      </div>
