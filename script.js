@@ -12,7 +12,7 @@ $(document).ready(function() {
         index = (index + 1) % totalPacks; // Incrementa el índice y vuelve al inicio si es necesario
         showPack(index);
     });
-    $('button-left').click(function(){
+    $('.button-left').click(function(){
         index = (index - 1 + totalPacks) % totalPacks; // Decrementa el índice y vuelve al final si es necesario
         showPack(index);
     })
@@ -23,7 +23,7 @@ $(document).ready(function() {
     }, 2000); // Cambia de pack cada 2 segundos
 
     $('.btn-comprar').click(function(){
-        const packNumber = $(this).data('pack');
-        window.location.href = 'indexC/compra-pack' + packNumber + '.html';
+        const packNumber = $(this).closest('.pack-item').data('pack');
+        window.location.href = 'version-c.html?pack=' + packNumber;
     })
 });
