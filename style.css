@@ -224,7 +224,7 @@ nav.nav-menu ul li a:hover {
     font-weight:bold;
 }
 
-.purchase-button{
+.btn-button{
     display: inline-block;
     margin-top: auto; /* empuja el botón hacia abajo */
     padding: 8px 16px;
