@@ -178,13 +178,7 @@ nav.nav-menu ul li a:hover {
 }
 
 .pack-item {
-    position: absolute;       /* se superpone un pack encima del otro */
-    top: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;               /* oculto por defecto */
-    transition: opacity 0.5s ease; /* transición suave */
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     background-color: white;
@@ -192,9 +186,11 @@ nav.nav-menu ul li a:hover {
     overflow: hidden;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 10px;
 }
 
 .pack-item-active {
+    display: flex;
     opacity: 1;               /* visible cuando está activo */
     position: relative;      /* para que ocupe su espacio */
     z-index: 1;
