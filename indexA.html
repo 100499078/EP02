@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/style.css"> <!-- Enlace al archivo externo CSS-->
     <link href="https://fonts.googleapis.com/css2?family=Sugo+Display:wght@400;700&display=swap" rel="stylesheet"> <!--Enlace al tipo de fuente para el título-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
+    <script src="js/registro.js" defer></script>
 </head>
 <body>
     <header>
@@ -41,41 +41,39 @@
         </div>
     </header>
 
-    <!--Cuerpo principal de la página-->
-<main class="register-body">
-  <section class="register-form-box">
-    <h2>Registro de nuevos usuarios</h2>
-    <form>
-      <div class="register-row">
-        <input type="text" placeholder="Nombre" class="register-input">
-        <input type="text" placeholder="Apellidos" class="register-input">
-      </div>
-      <div class="register-row">
-        <input type="email" placeholder="Correo electrónico" class="register-input">
-        <input type="email" placeholder="Confirmar correo" class="register-input">
-      </div>
-      <div class="register-row">
-        <label class="register-label">Fecha de nacimiento</label>
-        <input type="date" class="register-input-date">
-      </div>
-      <div class="register-row">
-        <input type="text" placeholder="Login" class="register-input login-input">
-        <input type="password" placeholder="Password" class="register-input">
-      </div>
-      <div class="register-row">
-        <label class="register-label">Subir imagen de perfil</label>
-        <input type="file" class="register-input-file">
-      </div>
-      <div class="register-row checkbox-row">
-        <input type="checkbox" id="privacy-policy" class="register-checkbox">
-        <label for="privacy-policy" class="register-label">Acepto la <a href="#">Política de Privacidad</a></label>
-      </div>
-      <a class="register-button" href="indexB.html">Guardar datos y acceder</a>
-      <!--<button type="submit" class="register-button">Guardar datos y acceder</button>-->
-
-    </form>
-  </section>
-</main>
+  <main class="register-body">
+    <section class="register-form-box">
+      <h2>Registro de nuevos usuarios</h2>
+      <form id="registroForm">
+        <div class="register-row">
+          <input type="text" id="nombre" placeholder="Nombre*" class="register-input" required>
+          <input type="text" id="apellidos" placeholder="Apellidos*" class="register-input" required>
+        </div>
+        <div class="register-row">
+          <input type="email" id="email" placeholder="Correo electrónico*" class="register-input" required>
+          <input type="email" id="confirmEmail" placeholder="Confirmar correo*" class="register-input" required>
+        </div>
+        <div class="register-row">
+          <label class="register-label">Fecha de nacimiento</label>
+          <input type="date" id="fechaNacimiento" class="register-input-date" required>
+        </div>
+        <div class="register-row">
+          <input type="text" id="login" placeholder="Login*" class="register-input login-input" required>
+          <input type="password" id="password" placeholder="Password*" class="register-input" required>
+        </div>
+        <div class="register-row">
+          <label class="register-label">Subir imagen de perfil</label>
+          <input type="file" id="imagen" class="register-input-file" accept=".webp, .png, .jpg" required>
+        </div>
+        <div class="register-row checkbox-row">
+          <input type="checkbox" id="privacy-policy" class="register-checkbox">
+          <label for="privacy-policy" class="register-label">Acepto la <a href="#">Política de Privacidad</a></label>
+        </div>
+        <button id="guardarBtn" class="register-button" disabled>Guardar datos y acceder</button>
+        <div class="mensaje" id="mensaje"></div>
+      </form>
+    </section>
+  </main>
 
     <!--PIE DE PÁGINA-->
       <div class="footer-content">

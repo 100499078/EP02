@@ -169,9 +169,9 @@
 
         <aside class="sidebar-wireframe" aria-label="Barra lateral de navegación">
           <div class="sidebar-user">
-            <span class="sidebar-username">Nombre de usuario</span>
+            <span id="usuarioNombre" class="sidebar-username">Nombre de usuario</span>
             <div class="sidebar-user-row">
-              <img src="images/montanero.jpg" alt="Foto de usuario" class="sidebar-user-img">
+              <img id="usuarioImg" src="images/montanero.jpg" alt="Foto de usuario" class="sidebar-user-img">
               <button class="sidebar-logout">Cerrar sesión</button>
             </div>
           </div>
@@ -253,5 +253,26 @@
         </div>
       </div>
     </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const usuario = JSON.parse(localStorage.getItem("usuario"));
+      if (usuario) {
+        document.getElementById("usuarioNombre").textContent = usuario.nombre + " " + usuario.apellidos;
+        document.getElementById("usuarioImg").src = usuario.imagen;
+      } else {
+        window.location.href = "indexA.html";
+      }
+
+      // Cerrar sesión
+      const logoutBtn = document.querySelector(".sidebar-logout");
+      logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("usuario");
+        window.location.href = "indexA.html";
+      });
+    });
+    </script>
+  </body>
+</html>
 
 
