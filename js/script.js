@@ -1,181 +1,179 @@
+// ===========================
+// Carrusel y packs
+// ===========================
 $(document).ready(function() {
     let index = 0;
-    const packs = $('.pack-item'); // Seleccionamos todos los elementos de la clase pack-item
+    const packs = $('.pack-item');
     const totalPacks = packs.length;
     let interval;
 
-    // Función para mostrar un pack específico y ocultar los demás
     function showPack(i) {
         packs.removeClass('activo');
         packs.eq(i).addClass('activo');
     }
 
-    function startInterval(){
+    function startInterval() {
         interval = setInterval(function() {
-            index = (index + 1) % totalPacks; // Incrementa el índice y vuelve al inicio si es necesario
+            index = (index + 1) % totalPacks;
             showPack(index);
-        }, 2000); // Cambia de pack cada 2 segundos
+        }, 2000);
     }
 
     showPack(index);
     startInterval();
 
-    $('.button-right').click(function(){
-        index = (index + 1) % totalPacks; // Incrementa el índice y vuelve al inicio si es necesario
+    $('.button-right').click(function() {
+        index = (index + 1) % totalPacks;
         showPack(index);
-        // Reinicia el intervalo para que no cambie inmediatamente después de hacer clic
         clearInterval(interval);
         startInterval();
     });
-    $('.button-left').click(function(){
-        index = (index - 1 + totalPacks) % totalPacks; // Decrementa el índice y vuelve al final si es necesario
+    $('.button-left').click(function() {
+        index = (index - 1 + totalPacks) % totalPacks;
         showPack(index);
-        // Reinicia el intervalo para que no cambie inmediatamente después de hacer clic
         clearInterval(interval);
         startInterval();
     });
-    
-    $('.btn-comprar').click(function(){
+
+    $('.btn-comprar').click(function() {
         const packNumber = $(this).closest('.pack-item').data('pack');
         window.location.href = 'indexC.html?pack=' + packNumber;
-    })
+    });
 });
 
+// ----------------- REGISTRO Y VALIDACIÓN -----------------
 
-// =====================================
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById('registroForm');
-  const privacidad = document.getElementById('privacy-policy');
-  const guardarBtn = document.getElementById('guardarBtn');
-  const mensaje = document.getElementById('mensaje');
+document.addEventListener("DOMContentLoaded", function() {
+  var form = document.getElementById('registroForm');
+  var mensaje = document.getElementById('mensaje');
+  var privacidad = document.getElementById("privacidad");
+  var boton = document.getElementById("guardarBtn");
 
-  if (form) { // Solo ejecuta en indexA.html
-    privacidad.addEventListener('change', () => {
-      guardarBtn.disabled = !privacidad.checked;
+  if (privacidad && boton) {
+    privacidad.addEventListener('change', function() {
+      boton.disabled = !this.checked;
     });
+  }
 
-    function validarFormulario() {
-      const nombre = document.getElementById('nombre').value.trim();
-      const apellidos = document.getElementById('apellidos').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const confirmEmail = document.getElementById('confirmEmail').value.trim();
-      const fechaNacimiento = document.getElementById('fechaNacimiento').value;
-      const login = document.getElementById('login').value.trim();
-      const password = document.getElementById('password').value;
-      const imagen = document.getElementById('imagen').files[0];
-
-      if (nombre.length < 3) return "El nombre debe tener al menos 3 caracteres.";
-
-      const partes = apellidos.split(" ").filter(p => p.length >= 3);
-      if (partes.length < 2) return "Debe introducir al menos dos apellidos válidos.";
-
-      const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!regexEmail.test(email)) return "Formato de correo no válido.";
-      if (email !== confirmEmail) return "Los correos no coinciden.";
-
-      const hoy = new Date();
-      const fecha = new Date(fechaNacimiento);
-      if (fecha > hoy) return "La fecha de nacimiento no puede ser futura.";
-      if (hoy.getFullYear() - fecha.getFullYear() > 120) return "Fecha de nacimiento inválida.";
-
-      if (login.length < 5) return "El login debe tener al menos 5 caracteres.";
-
-      const regexPass = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d)(?=.*[^A-Za-z0-9]).{8,}$/;
-      if (!regexPass.test(password))
-        return "Contraseña inválida. Debe tener 8 caracteres, 2 números, 1 mayúscula, 1 minúscula y 1 símbolo.";
-
-      if (!imagen) return "Debe subir una imagen.";
-      const formatosValidos = ["image/webp", "image/png", "image/jpeg"];
-      if (!formatosValidos.includes(imagen.type))
-        return "Formato de imagen no válido. Use .webp, .png o .jpg.";
-
-      return null;
-    }
-
-    form.addEventListener('submit', (e) => {
+  if (form) {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const error = validarFormulario();
+      mensaje.textContent = "";
 
-      if (error) {
-        mensaje.style.color = "red";
-        mensaje.textContent = error;
-        return;
-      }
+    // 1. Toma de datos
+      var nombre = document.getElementById("nombre").value.trim();
+      var apellidos = document.getElementById("apellidos").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var confirmEmail = document.getElementById("confirmEmail").value.trim();
+      var fecha = document.getElementById("fechaNacimiento").value;
+      var login = document.getElementById("login").value.trim();
+      var pass = document.getElementById("password").value;
+      var perfil = document.getElementById("imagen");
 
-      const reader = new FileReader();
-      reader.onload = function () {
-        const datosUsuario = {
-          nombre: document.getElementById('nombre').value,
-          apellidos: document.getElementById('apellidos').value,
-          email: document.getElementById('email').value,
-          fechaNacimiento: document.getElementById('fechaNacimiento').value,
-          login: document.getElementById('login').value,
-          imagen: reader.result
+    // 2. Validación modular
+      if (!validarNombre(nombre)) return mostrarMensaje("Nombre demasiado corto.", false);
+      if (!validarApellidos(apellidos)) return mostrarMensaje("Apellidos incorrectos.", false);
+      if (!validarEmail(email)) return mostrarMensaje("Email inválido.", false);
+      if (email !== confirmEmail) return mostrarMensaje("Los emails no coinciden.", false);
+      if (fecha && !validarFecha(fecha)) return mostrarMensaje("Fecha de nacimiento incorrecta.", false);
+      if (!validarLogin(login)) return mostrarMensaje("Login demasiado corto.", false);
+      if (!validarPassword(pass)) return mostrarMensaje("Contraseña inválida.", false);
+      if (!validarPerfil(perfil)) return mostrarMensaje("Imagen de perfil inválida.", false);
+      if (!privacidad.checked) return mostrarMensaje("Debes aceptar la política.", false);
+
+    // Guardar en localStorage y mostrar éxito
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        var usuario = {
+          nombre: nombre,
+          apellidos: apellidos,
+          email: email,
+          fecha: fecha,
+          login: login,
+          perfil: e.target.result
         };
-        localStorage.setItem("usuario", JSON.stringify(datosUsuario));
-
-        mensaje.style.color = "green";
-        mensaje.textContent = "Registro exitoso. Redirigiendo...";
-        setTimeout(() => window.location.href = "indexB.html", 1500);
+        localStorage.setItem("usuarioActual", JSON.stringify(usuario));
+        mostrarMensaje("¡Usuario registrado correctamente!", true);
+        setTimeout(function() { window.location.href = "indexB.html"; }, 1500);
       };
-      reader.readAsDataURL(document.getElementById('imagen').files[0]);
+      reader.readAsDataURL(perfil.files[0]);
     });
   }
-
-  // ======================================
-  const usuario = JSON.parse(localStorage.getItem("usuario"));
-  const nombreElemento = document.getElementById("usuarioNombre");
-  const imgElemento = document.getElementById("usuarioImg");
-  const logoutBtn = document.querySelector(".sidebar-logout");
-
-  if (nombreElemento && usuario) {
-    nombreElemento.textContent = usuario.nombre + " " + usuario.apellidos;
-    if (imgElemento) imgElemento.src = usuario.imagen;
+  // Funciones de validación
+  function validarNombre(nombre) {
+    return nombre.length >= 3;
+  }
+  function validarApellidos(apellidos) {
+    var partes = apellidos.split(" ");
+    return partes.length >= 2 && partes.every(function(p) { return p.length >= 3; });
+  }
+  function validarEmail(email) {
+    var regex = /^[\w\.-]+@[\w\.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(email);
+  }
+  function validarFecha(fecha) {
+    var hoy = new Date();
+    var nacimiento = new Date(fecha);
+    var edad = hoy.getFullYear() - nacimiento.getFullYear();
+    return edad >= 10 && edad <= 120 && nacimiento <= hoy;
+  }
+  function validarLogin(login) {
+    return login.length >= 5;
+  }
+  function validarPassword(pass) {
+    return pass.length >= 8 &&
+      /[A-Z]/.test(pass) &&
+      /[a-z]/.test(pass) &&
+      (pass.match(/\d/g) || []).length >= 2 &&
+      /[!@#$%^&*()_\-]/.test(pass);
+  }
+  function validarPerfil(fileInput) {
+    if (!fileInput.files[0]) return false;
+    var type = fileInput.files[0].type;
+    return ['image/webp','image/png','image/jpeg'].includes(type);
   }
 
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
-      localStorage.removeItem("usuario");
-      window.location.href = "indexA.html";
-    });
+  // Muestra mensaje en pantalla, tipo diapositiva
+  function mostrarMensaje(msg, esExito) {
+    mensaje.textContent = msg;
+    mensaje.style.color = esExito ? "green" : "red";
   }
 });
 
-// ======================================
 
-// Home: cookies
+// ===========================
+// Cookies 
 
-function setCookie(cname, cvalue, exdays){
+function setCookie(cname, cvalue, exdays) {
     const d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    let expires = "expires=" +d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + "path=/";
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
 function getCookie(cname) {
-  let name = cname + "=";
-  let ca = document.cookie.split(';');
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
+    let name = cname + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
     }
-    if (c.indexOf(name)==0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
+    return "";
 }
 
-// No terminado
 function checkCookie() {
-  let username = getCookkie("login-email");
-  if (username != ""){
-    alert("Hola de nuevo" + username);
-  } else {
-    username = prompt("Por favor introduzca su nombre:", "");
-    if(username != "" && username != null){
-      setCookie("login-email", username, 365);
+    let username = getCookie("login-email");
+    if (username != "") {
+        alert("Hola de nuevo " + username);
+    } else {
+        username = prompt("Por favor introduzca su nombre:", "");
+        if (username != "" && username != null) {
+            setCookie("login-email", username, 365);
+        }
     }
-  }
 }
