@@ -41,6 +41,40 @@ $(document).ready(function() {
     });
 });
 
+// ----------------- INICIO DE SESIÓN -----------------
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("form-login");
+  const mensaje = document.getElementById("mensaje-login");
+  const emailInput = document.getElementById("login-email");
+  const passwordInput = document.getElementById("login-pass");
+
+  if(form){
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      // Obtenemos el usuario del localStorage
+      const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioActual"));
+      if (!usuarioGuardado) {
+        mostrarMensaje("No hay usario registrado con ese mail. Por favor, regístrese.", false);
+        return;
+      }
+      const email = emailInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      // Validamos las credenciales
+      if (email === usuarioGuardado.email && password === usuarioGuardado.password) {
+        window.location.href = "indexB.html";
+      }
+      else {
+        mostrarMensaje("Email o contraseña incorrectos.", false);
+      }
+    });
+  }
+});
+  
+
+
 // ----------------- REGISTRO Y VALIDACIÓN -----------------
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -141,39 +175,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-// ===========================
-// Cookies 
 
-function setCookie(cname, cvalue, exdays) {
-    const d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    let expires = "expires=" + d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-    let name = cname + "=";
-    let ca = document.cookie.split(';');
-    for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-}
-
-function checkCookie() {
-    let username = getCookie("login-email");
-    if (username != "") {
-        alert("Hola de nuevo " + username);
-    } else {
-        username = prompt("Por favor introduzca su nombre:", "");
-        if (username != "" && username != null) {
-            setCookie("login-email", username, 365);
-        }
-    }
-}
