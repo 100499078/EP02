@@ -21,11 +21,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Validamos las credenciales
       if (emailInput.value.trim() === usuarioGuardado.email && passwordInput.value === usuarioGuardado.password) {
-        window.location.href = "indexB.html";
+        window.location.href = "../indexB.html";
       }
       else {
         mostrarMensaje("Email o contraseña incorrectos.", false);
       }
     });
+  }
+
+// Muestra mensaje en pantalla, tipo diapositiva
+  function mostrarMensaje(msg, esExito) {
+    mensaje.textContent = msg;
+    mensaje.style.color = esExito ? "green" : "red";
   }
 });
