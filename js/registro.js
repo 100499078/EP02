@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
         };
         localStorage.setItem("usuarioActual", JSON.stringify(usuario));
         mostrarMensaje("¡Usuario registrado correctamente!", true);
-        setTimeout(function() { window.location.href = "../indexC.html"; }, 1500);
+        setTimeout(function() { window.location.href = "indexB.html"; }, 1500);
       };
       reader.readAsDataURL(perfil.files[0]);
     });

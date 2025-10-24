@@ -256,10 +256,10 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const usuario = JSON.parse(localStorage.getItem("usuario"));
+      const usuario = JSON.parse(localStorage.getItem("usuarioActual"));
       if (usuario) {
         document.getElementById("usuarioNombre").textContent = usuario.nombre + " " + usuario.apellidos;
-        document.getElementById("usuarioImg").src = usuario.imagen;
+        document.getElementById("usuarioImg").src = usuario.perfil;
       } else {
         window.location.href = "indexA.html";
       }
@@ -267,7 +267,7 @@
       // Cerrar sesión
       const logoutBtn = document.querySelector(".sidebar-logout");
       logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("usuario");
+        localStorage.removeItem("usuarioActual");
         window.location.href = "indexA.html";
       });
     });
