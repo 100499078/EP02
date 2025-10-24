@@ -1,5 +1,5 @@
 // ----------------- INICIO DE SESIÓN -----------------
-
+console.log("login.js cargado");
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje-login");
@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if(form){
     form.addEventListener("submit", function(e) {
       e.preventDefault();
+      console.log("Formulario enviado");
 
       // Obtenemos el usuario del localStorage
       const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioActual"));
@@ -21,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Validamos las credenciales
       if (emailInput.value.trim() === usuarioGuardado.email && passwordInput.value === usuarioGuardado.password) {
-        window.location.href = "../indexB.html";
+        window.location.href = "indexB.html";
       }
       else {
         mostrarMensaje("Email o contraseña incorrectos.", false);
