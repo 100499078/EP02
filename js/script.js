@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function() {
       const password = passwordInput.value.trim();
 
       // Validamos las credenciales
-      if (email === usuarioGuardado.email && password === usuarioGuardado.password) {
+      if (emailInput.value.trim() === usuarioGuardado.email && passwordInput.value === usuarioGuardado.password) {
         window.location.href = "indexB.html";
       }
       else {
@@ -124,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function() {
           email: email,
           fecha: fecha,
           login: login,
+          password: pass,
           perfil: e.target.result
         };
         localStorage.setItem("usuarioActual", JSON.stringify(usuario));
