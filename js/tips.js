@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Mostrar los últimos 3 consejos
-        const ultimosTres = consejos.slice(-3).reverse();
+        const ultimosTres = consejos.slice(0,3);
         ultimosTres.forEach((c) => {
             const li = document.createElement("li");
             const a = document.createElement("a");
@@ -31,7 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const titulo = titleInput.value.trim();
         const texto = textInput.value.trim();
 
-        if (titulo === "" || texto === "")  return;
+        // Validaciones de los campos
+        if (titulo.length < 15) {
+            alert("El título debe tener al menos 15 caracteres.");
+            return;
+        }
+
+        if (texto.length < 30) {
+            alert("La descripción debe tener al menos 30 caracteres.");
+            return;
+        }
 
         const nuevoConsejo = {
             id: Date.now(),
@@ -41,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const consejos = JSON.parse(localStorage.getItem("consejos")) || [];
-        consejos.push(nuevoConsejo);
+        consejos.unshift(nuevoConsejo);
         localStorage.setItem("consejos", JSON.stringify(consejos));
 
         // Limpiar el forms
