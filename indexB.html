@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="js/script.js" defer></script> <!--Enlace al script principal de JavaScript-->
   <script src="js/logout.js" defer></script>
+  <script src="js/tips.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Sugo+Display:wght@400;700&display=swap" rel="stylesheet"> <!--Enlace al tipo de fuente para el título-->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
@@ -203,19 +204,14 @@
           </section>
           <section class="sidebar-tips">
             <h2>Últimos consejos</h2>
-            <ul>
-              <li><a href="#">Cómo ahorrar dinero en hostales</a></li>
-              <li><a href="#">Mejores apps para planear viajes</a></li>
-              <li><a href="#">Visados fáciles en Asia</a></li>
-              <li><a href="#">Material imprescindible para viajar</a></li>
-            </ul>
+            <ul class="tips-list"></ul>
           </section>
           <section class="sidebar-add-tip">
             <h2>¿Tienes algún consejo?</h2>
-            <form>
+            <form class="form-add-tip">
               <input type="text" class="sidebar-tip-title" placeholder="Título del consejo">
               <div class="tip-row">
-                <textarea class="sidebar-tip-text" placeholder="Escribe aquí tu consejo..."></textarea>
+                <textarea class="sidebar-tip-text" placeholder="Escribe aquí tu consejo..." required></textarea>
                 <button type="submit" class="sidebar-tip-submit">Enviar</button>
               </div>
             </form>

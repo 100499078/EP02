@@ -630,7 +630,6 @@ body, .wrapper, .container, main.cuerpo{
 }
 
 .sidebar-tips a:hover {
-  color: #5073cb; /* Azul al pasar el mouse */
   text-decoration: underline;
 }
 
