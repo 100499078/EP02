@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="js/script.js" defer></script> <!--Enlace al script principal de JavaScript-->
+  <script src="js/logout.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Sugo+Display:wght@400;700&display=swap" rel="stylesheet"> <!--Enlace al tipo de fuente para el título-->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
@@ -166,13 +167,25 @@
             </div>
           </div>
         </section>
-
+        
+        <!-- Cierre de sesión -->
         <aside class="sidebar-wireframe" aria-label="Barra lateral de navegación">
           <div class="sidebar-user">
             <span id="usuarioNombre" class="sidebar-username">Nombre de usuario</span>
             <div class="sidebar-user-row">
               <img id="usuarioImg" src="images/montanero.jpg" alt="Foto de usuario" class="sidebar-user-img">
               <button class="sidebar-logout">Cerrar sesión</button>
+            </div>
+          </div>
+
+          <!-- Confirmación de cierre de sesión -->
+          <div id="mode-logout" class="logout-confirmation">
+            <div class="mode-content">
+              <p>¿Desea cerrar sesión?</p>
+              <div class="btns-logout">
+                <button id="btn-confirmLogout">Confirmar</button>
+                <button id="btn-cancelLogout">Cancelar</button>
+              </div>
             </div>
           </div>
 
