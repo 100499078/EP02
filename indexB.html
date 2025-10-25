@@ -267,6 +267,7 @@
       </div>
     </footer>
 
+    <!-- Carga la información del usuario -->
     <script>
     document.addEventListener("DOMContentLoaded", () => {
       const usuario = JSON.parse(localStorage.getItem("usuarioActual"));
@@ -276,13 +277,6 @@
       } else {
         window.location.href = "indexA.html";
       }
-
-      // Cerrar sesión
-      const logoutBtn = document.querySelector(".sidebar-logout");
-      logoutBtn.addEventListener("click", () => {
-        localStorage.removeItem("usuarioActual");
-        window.location.href = "indexA.html";
-      });
     });
     </script>
   </body>
