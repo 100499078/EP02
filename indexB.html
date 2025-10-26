@@ -12,6 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Sugo+Display:wght@400;700&display=swap" rel="stylesheet"> <!--Enlace al tipo de fuente para el título-->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
+  <!--Verificar sesión-->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const usuarioLogueado = localStorage.getItem("usuarioLogueado");
+      if (!usuarioLogueado) {
+        window.location.href = "indexA.html";
+      }
+    });
+  </script>
+
 
 </head>
 <body>

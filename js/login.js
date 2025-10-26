@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Validamos las credenciales
       if (emailInput.value.trim() === usuarioGuardado.email && passwordInput.value === usuarioGuardado.password) {
+        localStorage.setItem("usuarioLogueado", email);
         window.location.href = "indexB.html";
       }
       else {
