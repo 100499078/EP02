@@ -1,7 +1,7 @@
 // ----------------- REGISTRO Y VALIDACIÓN -----------------
 document.addEventListener("DOMContentLoaded", () => {
       // Si ya hay usuario registrado, redirigir a indexB.html
-      const usuarioExistente = JSON.parse(localStorage.getItem("usuarioActual"));
+      const usuarioExistente = JSON.parse(localStorage.getItem("usuarioRegistrado"));
       if(usuarioExistente) {
         window.location.href = "indexB.html";
         return;
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             password: pass,
             perfil: e.target.result
         };
-        localStorage.setItem("usuarioActual", JSON.stringify(usuario));
+        localStorage.setItem("usuarioRegistrado", JSON.stringify(usuario));
         mostrarMensaje("¡Usuario registrado correctamente!", true);
         setTimeout(function() { window.location.href = "indexB.html"; }, 1500);
         };

@@ -266,8 +266,9 @@
     <!-- Carga la información del usuario -->
     <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const usuario = JSON.parse(localStorage.getItem("usuarioActual"));
-      if (usuario) {
+      const loginActivo = localStorage.getItem("usuarioLogueado");
+      const usuario = JSON.parse(localStorage.getItem("usuarioRegistrado"));
+      if (loginActivo && usuario && loginActivo === usuario.email) {
         document.getElementById("usuarioNombre").textContent = usuario.nombre + " " + usuario.apellidos;
         document.getElementById("usuarioImg").src = usuario.perfil;
       } else {
