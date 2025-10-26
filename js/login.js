@@ -1,5 +1,6 @@
-// ----------------- INICIO DE SESIÓN -----------------
-console.log("login.js cargado");
+// ----------------- INICIO DE SESIÓN -----------------<!--Verificar sesión-->
+
+ 
 document.addEventListener("DOMContentLoaded", function() {
   const form = document.getElementById("form-login");
   const mensaje = document.getElementById("mensaje-login");
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log("Formulario enviado");
 
       // Obtenemos el usuario del localStorage
-      const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioActual"));
+      const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioRegistrado"));
       if (!usuarioGuardado) {
         mostrarMensaje("No hay usario registrado con ese mail. Por favor, regístrese.", false);
         return;
