@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
       console.log("Formulario enviado");
 
       // Obtenemos el usuario del localStorage
-      const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioRegistrado"));
+      const usuarioGuardado = JSON.parse(localStorage.getItem("usuarioActual"));
       if (!usuarioGuardado) {
         mostrarMensaje("No hay usario registrado con ese mail. Por favor, regístrese.", false);
         return;
@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
       // Validamos las credenciales
       if (emailInput.value.trim() === usuarioGuardado.email && passwordInput.value === usuarioGuardado.password) {
-        localStorage.setItem("usuarioLogueado", email);
+        localStorage.setItem("usuarioActual", email);
         window.location.href = "indexB.html";
       }
       else {
