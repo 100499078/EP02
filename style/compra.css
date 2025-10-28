@@ -309,7 +309,7 @@ input, select{
   color: rgb(69, 43, 3);
 }
 
-.cerrar-modo button {
+#cerrar-modo {
   background-color: #f1cc7e;
   color: rgb(69, 43, 3);             
   border: none;              
@@ -320,7 +320,7 @@ input, select{
   margin-top: 15px;
 }
 
-.cerrar-modo button:hover {
+#cerrar-modo:hover {
   background-color: #e6b65a;
 }
 

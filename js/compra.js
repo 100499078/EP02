@@ -31,19 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   cerrarmodo.addEventListener('click', () => {
-    mode.style.display = 'none';
+    modo.style.display = 'none';
     window.location.href = 'index.html';
   });
 
   botonBorrar.addEventListener('click', function() {
-    form.reset();
-    mensaje.textContent = '';
-  });
-  
-
-  botonBorrar.addEventListener('click', function() {
-    form.reset();
-    mensaje.textContent = '';
+  form.reset();
+  mensaje.textContent = '';
   });
 
   function mostrarError(msg) {
