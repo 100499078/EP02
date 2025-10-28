@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('formulario-compra');
   const mensaje = document.getElementById('mensaje-compra');
   const botonBorrar = document.querySelector('.btn-limpiar');
+  const modo = document.getElementById('modo-compra');
+  const cerrarmodo = document.getElementById('cerrar-modo');
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
@@ -24,10 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!fechaValida(fechaCaducidad)) return mostrarError('La fecha de caducidad debe ser futura.');
     if (!/^\d{3}$/.test(cvv)) return mostrarError('El CVV debe tener exactamente 3 dígitos.');
 
-    mensaje.textContent = 'Compra realizada correctamente.';
-    mensaje.style.color = 'green';
+    modo.style.display = 'flex';
     form.reset();
   });
+
+  cerrarmodo.addEventListener('click', () => {
+    mode.style.display = 'none';
+    window.location.href = 'index.html';
+  });
+
+  botonBorrar.addEventListener('click', function() {
+    form.reset();
+    mensaje.textContent = '';
+  });
+  
 
   botonBorrar.addEventListener('click', function() {
     form.reset();

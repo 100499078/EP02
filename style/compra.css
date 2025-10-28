@@ -285,6 +285,46 @@ input, select{
 .footer-newsletter button:hover {
   filter: brightness(0.97);
 }
+
+.modo {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modo-contenido {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.modo-contenido h2 {
+  margin-bottom: 20px;
+  color: rgb(69, 43, 3);
+}
+
+.cerrar-modo button {
+  background-color: #f1cc7e;
+  color: rgb(69, 43, 3);             
+  border: none;              
+  padding: 10px 20px;        
+  border-radius: 5px;        
+  font-size: 16px;          
+  cursor: pointer;           
+  margin-top: 15px;
+}
+
+.cerrar-modo button:hover {
+  background-color: #e6b65a;
+}
+
+
 @media (max-width: 800px) {
   .footer-content {
     flex-direction: column;
