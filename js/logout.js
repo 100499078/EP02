@@ -17,7 +17,6 @@ cancelBtn.addEventListener("click", () => {
 // Confirmar cierre de sesión
 confirmBtn.addEventListener("click", () => {
     localStorage.removeItem("usuarioActual");
-
     window.location.href = "index.html";
 });
 
