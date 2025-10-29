@@ -13,12 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const privacidad = document.getElementById("privacidad");
     const boton = document.getElementById("guardarBtn");
 
-    if (privacidad && boton) {
-    privacidad.addEventListener('change', function() {
-        boton.disabled = !this.checked;
-    });
-    }
-
     if (form) {
     form.addEventListener('submit', function(e) {
         e.preventDefault();
@@ -48,6 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Guardar en localStorage y mostrar éxito
         const reader = new FileReader();
         reader.onload = function(e) {
+        // Recupera el listado de usuarios existente o crea uno nuevo
+        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+        // Crea el usuario nuevo
         const usuario = {
             nombre: nombre,
             apellidos: apellidos,
@@ -57,7 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
             password: pass,
             perfil: e.target.result
         };
-        localStorage.setItem("usuarioActual", JSON.stringify(usuario));
+
+        // Añade el nuevo usuario al array
+        usuarios.push(usuario);
+
+        // Guarda el array actualizado
+        localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+        // Para la sesión activa si lo necesitas, guarda el usuario actual
+        localStorage.setItem('usuarioActual', JSON.stringify(usuario));
+
         mostrarMensaje("¡Usuario registrado correctamente!", true);
         setTimeout(function() { window.location.href = "indexB.html"; }, 1500);
         };
