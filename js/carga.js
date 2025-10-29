@@ -4,6 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("usuarioNombre").textContent = usuario.nombre + " " + usuario.apellidos;
         document.getElementById("usuarioImg").src = usuario.perfil;
       } else {
-        window.location.href = "indexA.html";
+        window.location.href = "../ejs/indexA.html";
       }
     });

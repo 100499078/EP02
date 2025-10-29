@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Usuario correcto, guardamos sesión y redirigimos
             localStorage.setItem('usuarioActual', JSON.stringify(usuarioEmail));
-            window.location.href = "indexB.html";
+            window.location.href = "../ejs/indexB.html";
         });
     }
 

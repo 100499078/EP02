@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mochileando por España</title>
-    <link rel="stylesheet" href="style/style.css"> <!-- Enlace al archivo externo CSS-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="js/script.js" defer></script> <!--Enlace al script principal de JavaScript-->
-    <script src="js/login.js" defer></script>
-    <script src="js/registro.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Sugo+Display:wght@400;700&display=swap" rel="stylesheet"> <!--Enlace al tipo de fuente para el título-->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantalla usuario Mochileros</title>
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="../js/script.js" defer></script> <!--Enlace al script principal de JavaScript-->
+  <script src="../js/logout.js" defer></script>
+  <script src="../js/tips.js" defer></script>
+  <script src ="../js/carga.js" defer></script>
+  <script src="../js/packs.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sugo+Display:wght@400;700&display=swap" rel="stylesheet"> <!--Enlace al tipo de fuente para el título-->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
 
 </head>
@@ -35,7 +37,7 @@
 
         <!-- Sección derecha: Logo + selección de idioma-->
         <div class="language-logo-section">
-            <img src="images/Logo.png" alt="Logo de Mochileando por España" class="logo">
+            <img src="../images/Logo.png" alt="Logo de Mochileando por España" class="logo">
             <!--Combo para la slección de idioma-->
             <select name="language" id="language-select">
                 <option value="es">ES</option>
@@ -70,7 +72,7 @@
                     <div class="carrusel-packs">
                         <!--Pack 1-->
                         <div class="pack-item activo" data-pack="1">
-                            <img src="images/pack1-montaña.png" alt="Pack aventura montaña">
+                            <img src="../images/pack1-montaña.png" alt="Pack aventura montaña">
                             <h3>Aventura asturiana</h3>
                             <p>5 días explorando los Picos de Europa y sus paisajes de ensueño</p>
                             <p class="precio">390€</p>
@@ -78,7 +80,7 @@
                         </div>
                         <!--Pack 2-->
                         <div class="pack-item" data-pack="2">
-                            <img src="images/pack2-desierto.png" alt="Pack aventura desierto">
+                            <img src="../images/pack2-desierto.png" alt="Pack aventura desierto">
                             <h4>El desafío del Teide</h4>
                             <p>7 días viviendo entre volcanes y playas que te dejarán boquiabierto</p>
                             <p class="precio">575€</p>
@@ -86,7 +88,7 @@
                         </div>
                         <!--Pack 3-->
                         <div class="pack-item" data-pack="3">
-                            <img src="images/pack3-camino.png" alt="Pack aventura camino">
+                            <img src="../images/pack3-camino.png" alt="Pack aventura camino">
                             <h4>Hacia Santiago</h4>
                             <p>10 días, casi 300 kms y una meta, ¡Santiago!</p>
                             <p class="precio">450€</p>
@@ -94,7 +96,7 @@
                         </div>
                         <!--Pack4-->
                         <div class="pack-item" data-pack="4">
-                            <img src="images/pack4-caravana.png" alt="Pack aventura caravana">
+                            <img src="../images/pack4-caravana.png" alt="Pack aventura caravana">
                             <h5>País Vasco en Caravana</h5>
                             <p>Recorre Euskadi y sus pueblos en autocaravana durante 8 días</p>
                             <p class="precio">400€</p>
@@ -102,7 +104,7 @@
                         </div>
                         <!--Pack 5-->
                         <div class="pack-item" data-pack="5">
-                            <img src="images/pack5-islas.png" alt="Pack aventura islas">
+                            <img src="../images/pack5-islas.png" alt="Pack aventura islas">
                             <h6>Senderismo por Mallorca</h6>
                             <p>5 días de las rutas de senderismo más espectaculares de Mallorca</p>
                             <p class="precio">480€</p>
@@ -113,12 +115,12 @@
                     <!--Flecha derecha-->
                     <button class="button-right">&#10095;</button> 
                 </div>            
-            </div>
+            </div>           
             <div class="comunidad-experiencias">
               <h2 class="exp">Experiencias de la comunidad mochilera</h2>
               <div class="experiencias-grid">
                 <div class="experiencia-caja">
-                  <img src="images/katmandu.png" alt="Hostal en Katmandú">
+                  <img src="../images/katmandu.png" alt="Hostal en Katmandú">
                   <h3>Hostal en Katmandú</h3>
                   <div class="botones-experiencia">
                     <button>Ver más</button>
@@ -126,7 +128,7 @@
                   </div>
                 </div>
                 <div class="experiencia-caja">
-                  <img src="images/sudamerica.png" alt="Sudamérica en bus">
+                  <img src="../images/sudamerica.png" alt="Sudamérica en bus">
                   <h3>Sudamérica en bus</h3>
                   <div class="botones-experiencia">
                     <button>Ver más</button>
@@ -134,7 +136,7 @@
                   </div>
                 </div>
                 <div class="experiencia-caja">
-                  <img src="images/india.png" alt="Visado para India">
+                  <img src="../images/india.png" alt="Visado para India">
                   <h3>Visado para India</h3>
                   <div class="botones-experiencia">
                     <button>Ver más</button>
@@ -142,7 +144,7 @@
                   </div>
                 </div>
                 <div class="experiencia-caja">
-                  <img src="images/tailandia.png" alt="Ruta por Tailandia">
+                  <img src="../images/tailandia.png" alt="Ruta por Tailandia">
                   <h3>Ruta por Tailandia</h3>
                   <div class="botones-experiencia">
                     <button>Ver más</button>
@@ -150,7 +152,7 @@
                   </div>
                 </div>
                 <div class="experiencia-caja">
-                  <img src="images/peru.png" alt="Trekking en Perú">
+                  <img src="../images/peru.png" alt="Trekking en Perú">
                   <h3>Trekking en Perú</h3>
                   <div class="botones-experiencia">
                     <button>Ver más</button>
@@ -158,87 +160,86 @@
                   </div>
                 </div>
                 <div class="experiencia-caja">
-                  <img src="images/safari.png" alt="Safari en Tanzania">
+                  <img src="../images/safari.png" alt="Safari en Tanzania">
                   <h3>Safari en Tanzania</h3>
                   <div class="botones-experiencia">
                     <button>Ver más</button>
                     <button class="btn-corazon" aria-label="Me gusta">&#10084;</button>
                   </div>
                 </div>
+            </div>
+          </div>
+        </section>
+        
+        <!-- Cierre de sesión -->
+        <aside class="sidebar-wireframe" aria-label="Barra lateral de navegación">
+          <div class="sidebar-user">
+            <span id="usuarioNombre" class="sidebar-username">Nombre de usuario</span>
+            <div class="sidebar-user-row">
+              <img id="usuarioImg" src="../images/montanero.jpg" alt="Foto de usuario" class="sidebar-user-img">
+              <button class="sidebar-logout">Cerrar sesión</button>
+            </div>
+          </div>
+
+          <!-- Confirmación de cierre de sesión -->
+          <div id="mode-logout" class="logout-confirmation">
+            <div class="mode-content">
+              <p>¿Desea cerrar sesión?</p>
+              <div class="btns-logout">
+                <button id="btn-confirmLogout">Confirmar</button>
+                <button id="btn-cancelLogout">Cancelar</button>
               </div>
             </div>
-
-        </section>
-
-    <!--Barra lateral derecha -->
-        <aside class="barra-lateral" aria-label="Barra lateral Home">
-              
-            <!-- Inicio de sesión -->
-          <form id="form-login" class="form-login">
-          <h2>Inicia sesión</h2>
-          <div class="campo">
-            <label for="login-email">Correo</label>
-            <input type="email" id="login-email" name="email" placeholder="nombre@dominio.com" required>
           </div>
-          <div class="campo">
-            <label for="login-pass">Contraseña</label>
-            <input type="password" id="login-pass" name="password" placeholder="********" required minlength="6">
-          </div>
-          <button type="submit" class="btn-primario">Iniciar sesión</button>
-          <a class="btn-secundario" href="indexA.html">Registro</a>
-          <div id="mensaje-login"></div>
-          </form>
 
-          <!-- Top destinos -->
-          <section>
-            <h2>Top destinos</h2>
-            <ul>
-              <li>Picos de Europa <span class="item-badge">4.8★</span></li>
-              <li>Islas Canarias <span class="item-badge">4.7★</span></li>
-              <li>Camino de Santiago <span class="item-badge">4.6★</span></li>
-              <li>Pirineos <span class="item-badge">4.6★</span></li>
-            </ul>
+          <section class="sidebar-search">
+            <h2>Busca experiencias</h2>
+            <form>
+              <div class="continent-grid">
+                <label><input type="checkbox" name="america"> América</label>
+                <label><input type="checkbox" name="europa"> Europa</label>
+                <label><input type="checkbox" name="asia"> Asia</label>
+                <label><input type="checkbox" name="africa"> África</label>
+              </div>
+              <input type="text" class="sidebar-search-input" placeholder="Buscar...">
+            </form>
           </section>
-
-          <!-- Consejos rápidos -->
-          <section>
-            <h2>Consejos rápidos</h2>
-            <ul class="lista-consejos">
-              <li>Lleva capas ligeras para cambios de clima en montaña.</li>
-              <li>Hidrátate y usa protector solar incluso en días nublados.</li>
-              <li>Revisa el nivel de dificultad antes de reservar.</li>
-            </ul>
-            <form class="form-consejo" action="#" method="post">
-              <label for="nuevo-consejo" class="sr-only">Añadir consejo</label>
-              <input type="text" id="nuevo-consejo" name="nuevo-consejo" placeholder="Escribe un consejo...">
-              <textarea class="nuevo-consejo" name="consejo" rows="2" placeholder="Comparte un consejo..." required></textarea>
-              <button type="submit" class="btn-primario btn-bloque">Publicar</button>
+          <section class="sidebar-tips">
+            <h2>Últimos consejos</h2>
+            <ul class="tips-list"></ul>
+          </section>
+          <section class="sidebar-add-tip">
+            <h2>¿Tienes algún consejo?</h2>
+            <form class="form-add-tip">
+              <input type="text" class="sidebar-tip-title" placeholder="Título del consejo">
+              <div class="tip-row">
+                <textarea class="sidebar-tip-text" placeholder="Escribe aquí tu consejo..." required></textarea>
+                <button type="submit" class="sidebar-tip-submit">Enviar</button>
+              </div>
             </form>
           </section>
 
-          <!-- Próximos encuentros -->
-          <section>
-            <h2>Próximos encuentros</h2>
-            <ul>
-              <li>
-                <div>5 Oct<br>Ruta Lagos de Covadonga<br><span style="font-size:0.95em;color:#8a7e54;">Nivel medio · 12 km</span></div>
-                <a href="registro.html" class="btn-mini">Apuntarse</a>
-              </li>
-              <li>
-                <div>19 Oct<br>Senderismo Anaga<br><span style="font-size:0.95em;color:#8a7e54;">Nivel fácil · 8 km</span></div>
-                <a href="registro.html" class="btn-mini">Apuntarse</a>
-              </li>
-              <li>
-                <div>2 Nov<br>Etapa Camino Inglés<br><span style="font-size:0.95em;color:#8a7e54;">Nivel medio · 18 km</span></div>
-                <a href="registro.html" class="btn-mini">Apuntarse</a>
-              </li>
-            </ul>
+          <section class="sidebar-calendar">
+            <h2>SEPTIEMBRE 2025</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>S</th><th>M</th><th>T</th><th>W</th><th>T</th><th>F</th><th>S</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr>
+                <tr><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td></tr>
+                <tr><td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td></tr>
+                <tr><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+                <tr><td>28</td><td>29</td><td>30</td><td></td><td></td><td></td><td></td></tr>
+              </tbody>
+            </table>
           </section>
         </aside>
 
-    </main>
-
-    <!--PIE DE PÁGINA-->
+        </main>
+    <footer class="footer">
       <div class="footer-content">
 
         <form class="footer-newsletter" action="#" method="post">
@@ -253,12 +254,18 @@
         </nav>
 
         <div class="footer-social">
-          <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
-          <a href="#"><img src="images/tiktok.png" alt="TikTok"></a>
-          <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+          <a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
+          <a href="#"><img src="../images/tiktok.png" alt="TikTok"></a>
+          <a href="#"><img src="../images/youtube.png" alt="YouTube"></a>
         </div>
 
         <div class="footer-bottom">
           <p>© 2025 Mochileando por España. Todos los derechos reservados.</p>
         </div>
       </div>
+    </footer>
+
+  </body>
+</html>
+
+

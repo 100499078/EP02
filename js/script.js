@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     $('.btn-comprar').click(function() {
         const packNumber = $(this).closest('.pack-item').data('pack');
-        window.location.href = 'indexC.html?pack=' + packNumber;
+        window.location.href = '../ejs/indexC.html?pack=' + packNumber;
     });
 });
 

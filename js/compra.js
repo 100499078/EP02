@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cerrarmodo.addEventListener('click', () => {
     modo.style.display = 'none';
-    window.location.href = 'index.html';
+    window.location.href = '../ejs/index.html';
   });
 
   botonBorrar.addEventListener('click', function() {

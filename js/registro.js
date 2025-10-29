@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Si ya hay usuario registrado, redirigir a indexB.html
       const usuarioExistente = JSON.parse(localStorage.getItem("usuarioActual"));
       if(usuarioExistente) {
-        window.location.href = "indexB.html";
+        window.location.href = "../ejs/indexB.html";
         return;
       }
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("usuarioActual", JSON.stringify(usuario));
 
         mostrarMensaje("¡Usuario registrado correctamente!", true);
-        setTimeout(function() { window.location.href = "indexB.html"; }, 1500);
+        setTimeout(function() { window.location.href = "../ejs/indexB.html"; }, 1500);
 
         };
         reader.readAsDataURL(perfil.files[0]);
