@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const usuario = {
             nombre: nombre,
             apellidos: apellidos,
-            email: email,
+            email: email.trim(),
             fecha: fecha,
             login: login,
             password: pass,
@@ -62,11 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
         // Guarda el array actualizado
         localStorage.setItem('usuarios', JSON.stringify(usuarios));
 
-        // Para la sesión activa si lo necesitas, guarda el usuario actual
-        localStorage.setItem('usuarioActual', JSON.stringify(usuario));
+        // Guardar el usuario activo también, si lo necesitas para la sesión
+        localStorage.setItem("usuarioActual", JSON.stringify(usuario));
 
         mostrarMensaje("¡Usuario registrado correctamente!", true);
         setTimeout(function() { window.location.href = "indexB.html"; }, 1500);
+
         };
         reader.readAsDataURL(perfil.files[0]);
     });
